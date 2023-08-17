@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <string.h>
+void isAddition(char *str1,char *str2)
+{
+    int lenA = strlen(str1);
+    int lenB = strlen(str2);
+    int maxsize = (lenA>lenB)?lenA:lenB;
+    int len = maxsize+1;
+    int result[len];
+    int carry=0;
+    int i=lenA-1,j=lenB-1,k=maxsize;
+    while(i>=0||j>=0||carry>0)
+    {
+        int sum = carry;
+        if(i>=0)
+        {
+            sum+=str1[i]-'0';
+            i--;
+        }
+        if(j>=0)
+        {
+            sum+=str2[j]-'0';
+            j--;
+        }
+        result[k] = sum%10;
+        carry = sum/10;
+        k--;
+    }
+    for(int i=k+1;i<len;i++)
+    {
+        printf("%d",result[i]);
+    }
+    
+}
+#include <stdio.h>
+
+int main()
+{
+   char str1[50];
+   char str2[50];
+   scanf("%s",str1);
+   scanf("%s",str2);
+   isAddition(str1,str2);
+
+    return 0;
+}
+#include <stdio.h>
+#include <string.h>
+void isAddition(char *str1,char *str2)
+{
+    int lenA = strlen(str1);
+    int lenB = strlen(str2);
+    int maxsize = (lenA>lenB)?lenA:lenB;
+    int len = maxsize+1;
+    int result[len];
+    int carry=0;
+    int i=lenA-1,j=lenB-1,k=maxsize;
+    while(i>=0||j>=0||carry>0)
+    {
+        int sum = carry;
+        if(i>=0)
+        {
+            sum+=str1[i]-'0';
+            i--;
+        }
+        if(j>=0)
+        {
+            sum+=str2[j]-'0';
+            j--;
+        }
+        result[k] = sum%10;
+        carry = sum/10;
+        k--;
+    }
+    for(int i=k+1;i<len;i++)
+    {
+        printf("%d",result[i]);
+    }
+    
+}
+#include <stdio.h>
+
+int main()
+{
+   char str1[50];
+   char str2[50];
+   scanf("%s",str1);
+   scanf("%s",str2);
+   isAddition(str1,str2);
+
+    return 0;
+}
+
